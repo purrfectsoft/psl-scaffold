@@ -13,7 +13,7 @@ EXIT_CODE=0
 if [ -n "$STAGED_FILES" ]; then
     while IFS= read -r file; do
       for pattern in "${FORBIDDEN[@]}"; do
-        if [[ "$file" == "$pattern"* || "$file" == */"$pattern"* ]]; then
+        if [[ "$file" == "$pattern"* || "$file" == */$pattern* ]]; then
           echo "❌ Error: Attempting to commit artifact '$file'."
           echo "   Please remove it from staging (git reset HEAD \"$file\") and add to .gitignore."
           EXIT_CODE=1

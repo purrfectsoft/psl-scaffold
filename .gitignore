@@ -8,6 +8,10 @@ mm-website-ref
 .env*
 !.env.example
 
+# Local MCP configurations
+mcp.local.json
+.vscode/mcp.json
+
 # Log files
 *.log
 
