@@ -1,0 +1,26 @@
+{
+  "name": "@psl-oss/scaffold",
+  "version": "1.0.0",
+  "description": "The Purrfect Soft PSL monorepo CLI scaffolder.",
+  "bin": {
+    "psl-scaffold": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --minify",
+    "dev": "tsup src/index.ts --format cjs --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "prompts": "^2.4.2",
+    "handlebars": "^4.7.8"
+  },
+  "devDependencies": {
+    "@psl/typescript-config": "workspace:*",
+    "@types/node": "^20.14.10",
+    "@types/prompts": "^2.4.9",
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.3"
+  }
+}
