@@ -1,0 +1,19 @@
+node_modules
+dist
+.turbo
+.next
+mm-website-ref
+
+# Local environment variables
+.env*
+!.env.example
+
+# Local MCP configurations
+mcp.local.json
+.vscode/mcp.json
+
+# Log files
+*.log
+
+# OS-generated files
+.DS_Store
