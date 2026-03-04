@@ -61,6 +61,16 @@ if (!prNumber) {
     process.exit(1);
 }
 
+if (!/^\d+$/.test(prNumber)) {
+    console.error("❌ Error: PR Number must be a valid integer.");
+    process.exit(1);
+}
+
+if (reviewId && !/^\d+$/.test(reviewId)) {
+    console.error("❌ Error: Review ID must be a valid integer.");
+    process.exit(1);
+}
+
 function getCurrentUser() {
     try {
         return execSync('gh api user --jq .login', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] }).trim();
