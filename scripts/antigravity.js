@@ -7,7 +7,7 @@ const fs = require('node:fs');
 console.log("🔄 Running Sync...");
 try {
     const syncScript = path.join(__dirname, 'sync-mcp.js');
-    execSync(`node ${syncScript}`, { stdio: "inherit" });
+    execSync(`node "${syncScript}"`, { stdio: "inherit" });
 } catch (e) {
     console.error("❌ Sync failed.");
     process.exit(1);

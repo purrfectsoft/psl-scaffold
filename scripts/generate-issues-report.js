@@ -79,7 +79,7 @@ allIssues.forEach(issue => {
   let parentId = null;
 
   // Strategy 1: Body parsing for "Parent Epic: #123"
-  if (!parentId) {
+  if (!parentId && issue.body) {
     const patterns = [
         /Parent Epic:\s*#(\d+)/i,
         /Epic:\s*#(\d+)/i,
@@ -95,7 +95,7 @@ allIssues.forEach(issue => {
     }
   }
 
-  // Strategy 3: Reverse lookup (Epic body contains #issue)
+  // Strategy 2: Reverse lookup (Epic body contains #issue)
   if (!parentId) {
       for (const [id, epic] of epicsMap.entries()) {
           const regex = new RegExp(`#${issue.number}\\b`);

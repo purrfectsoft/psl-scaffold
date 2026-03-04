@@ -101,7 +101,6 @@ function syncMcp() {
 
     // 3. Merge Strategies
     const servers = projectConfig.mcpServers || {};
-    let addedCount = 0;
 
     // Load .env vars once
     const fileEnvVars = parseEnv();
@@ -178,19 +177,6 @@ function syncMcp() {
                     );
                 }
             }
-
-            // Ensure SSL Mode
-            serverConfig.args = serverConfig.args.map((arg) => {
-                if (arg.includes("postgres://") || arg.includes("postgresql://")) {
-                    if (!arg.includes("?")) {
-                        return `${arg}?sslmode=disable`;
-                    }
-                    if (!arg.includes("sslmode=")) {
-                        return `${arg}&sslmode=disable`;
-                    }
-                }
-                return arg;
-            });
         }
 
         // 4. Context7: Special Handling

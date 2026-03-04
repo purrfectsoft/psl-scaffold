@@ -6,7 +6,7 @@ trigger: always_on
 
 This is a TurboRepo monorepo.
 
-## 📂 Apps
+## 📂 Apps (Planned)
 
 - **`apps/web`**: Main Next.js 15 Application.
   - `app/`: App Router (Pages/Layouts).
@@ -18,9 +18,11 @@ This is a TurboRepo monorepo.
 
 ## 📦 Packages (Shared)
 
-- **`packages/ui`**: Shared Design System (Radix-based).
-- **`packages/config`**: Shared configurations (ESLint, TS, Tailwind).
-- **`packages/validators`**: Shared Zod schemas (API/db).
+- **`packages/typescript-config`**: Extended base configurations.
+- **`packages/eslint-config`**: Internal ESLint configurations.
+- **`packages/ui`** (Planned): Shared Design System (Radix-based).
+- **`packages/config`** (Planned): Shared configurations (Tailwind).
+- **`packages/validators`** (Planned): Shared Zod schemas (API/db).
 - **`packages/database`** (Planned): Prisma Client singleton.
 
 ## 🧭 Navigation Tips
