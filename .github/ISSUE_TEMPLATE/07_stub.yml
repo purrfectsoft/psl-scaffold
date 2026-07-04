@@ -1,0 +1,45 @@
+name: "💡 Stub"
+description: An idea, placeholder, or incubation item for future consideration
+title: ""
+labels: ["type: stub"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Stubs are placeholders for ideas that need further refinement before becoming actionable issues. They will be graduated to full issues (Feature/Epic) once context is validated.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective & Preamble
+      description: What is the idea or concept? Why might it be worth pursuing?
+      placeholder: Provide a rough summary of the idea.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: What would need to be true for this stub to graduate to a full issue?
+      value: |
+        - [ ] Context validated against current codebase
+        - [ ] Acceptance criteria drafted
+        - [ ] Implementation brief outlined
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-brief
+    attributes:
+      label: Implementation Brief
+      description: Any early thoughts on technical approach or feasibility.
+      placeholder: Optional — can be filled in during graduation.
+
+  - type: textarea
+    id: qa-checklist
+    attributes:
+      label: QA Checklist
+      description: Verification steps (can be drafted during graduation).
+      value: |
+        - [ ] To be defined during graduation

@@ -1,0 +1,45 @@
+name: "✨ Enhancement"
+description: Suggest an improvement to an existing feature
+title: ""
+labels: ["type: enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an enhancement! Please describe what you'd like to improve.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective & Preamble
+      description: What existing feature would you like to improve? What's the current limitation?
+      placeholder: Provide a clear, high-level summary.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List the specific requirements that must be met.
+      value: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-brief
+    attributes:
+      label: Implementation Brief
+      description: Technical details, architectural decisions, or proposed approach.
+      placeholder: Outline the technical plan here.
+
+  - type: textarea
+    id: qa-checklist
+    attributes:
+      label: QA Checklist
+      description: Steps to verify the enhancement works as expected.
+      value: |
+        - [ ] Manual test case 1
+        - [ ] Manual test case 2

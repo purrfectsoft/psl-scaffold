@@ -1,0 +1,8 @@
+{
+  "projectId": "{{PAWTHY_PROJECT_ID}}",
+  "envId": "{{PAWTHY_ENV_ID}}",
+  "keys": [
+    "{{SECRET_KEY_1}}",
+    "{{SECRET_KEY_2}}"
+  ]
+}

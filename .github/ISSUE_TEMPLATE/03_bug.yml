@@ -1,0 +1,45 @@
+name: "🐛 Bug Report"
+description: Report a bug or unexpected behavior
+title: ""
+labels: ["type: bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please provide as much detail as possible to help us reproduce and fix the issue.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective & Preamble
+      description: What is the bug? What did you expect to happen vs. what actually happened?
+      placeholder: Describe the bug clearly, including steps to reproduce.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: What conditions must be met for this bug to be considered fixed?
+      value: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-brief
+    attributes:
+      label: Implementation Brief
+      description: Technical details, root cause analysis, or proposed fix.
+      placeholder: Outline the technical investigation or fix here.
+
+  - type: textarea
+    id: qa-checklist
+    attributes:
+      label: QA Checklist
+      description: Steps to verify the bug is fixed and no regressions are introduced.
+      value: |
+        - [ ] Verify the original bug is resolved
+        - [ ] Verify no regressions in related functionality

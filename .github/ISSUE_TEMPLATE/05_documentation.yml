@@ -1,0 +1,45 @@
+name: "📚 Documentation"
+description: Documentation additions, updates, or corrections
+title: ""
+labels: ["type: docs"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the documentation change needed.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective & Preamble
+      description: What documentation needs to be added, updated, or corrected?
+      placeholder: Provide a clear, high-level summary.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List the specific requirements that must be met.
+      value: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-brief
+    attributes:
+      label: Implementation Brief
+      description: What files or sections need to be updated? Any structural changes?
+      placeholder: Outline the documentation plan here.
+
+  - type: textarea
+    id: qa-checklist
+    attributes:
+      label: QA Checklist
+      description: Steps to verify the documentation is accurate and complete.
+      value: |
+        - [ ] Documentation is accurate and up to date
+        - [ ] All links and references are valid

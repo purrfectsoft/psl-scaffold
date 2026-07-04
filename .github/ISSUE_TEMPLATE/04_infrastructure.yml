@@ -1,0 +1,45 @@
+name: "🔧 Infrastructure"
+description: DevOps, CI/CD, configuration, or tooling changes
+title: ""
+labels: ["type: infra"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the infrastructure or tooling change needed.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective & Preamble
+      description: What infrastructure or tooling change is needed? Why is it important?
+      placeholder: Provide a clear, high-level summary.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List the specific requirements that must be met.
+      value: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-brief
+    attributes:
+      label: Implementation Brief
+      description: Technical details, architectural decisions, or proposed approach.
+      placeholder: Outline the technical plan here.
+
+  - type: textarea
+    id: qa-checklist
+    attributes:
+      label: QA Checklist
+      description: Steps to verify the infrastructure change works as expected.
+      value: |
+        - [ ] Manual test case 1
+        - [ ] Manual test case 2
