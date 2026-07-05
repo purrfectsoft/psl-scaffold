@@ -26,13 +26,13 @@ This repo is **not a project itself** — it is a template you copy into new or 
 
 Before applying this boilerplate, ensure you have:
 
-| Tool | Version | Check |
-|:--|:--|:--|
-| **Node.js** | ≥ 22.0.0 | `node -v` |
-| **pnpm** | ≥ 9.0.0 | `pnpm -v` |
-| **Git** | any recent | `git --version` |
-| **GitHub CLI** | any recent | `gh --version` |
-| **nvm** (recommended) | any | `nvm --version` |
+| Tool                  | Version    | Check           |
+| :-------------------- | :--------- | :-------------- |
+| **Node.js**           | ≥ 22.0.0   | `node -v`       |
+| **pnpm**              | ≥ 9.0.0    | `pnpm -v`       |
+| **Git**               | any recent | `git --version` |
+| **GitHub CLI**        | any recent | `gh --version`  |
+| **nvm** (recommended) | any        | `nvm --version` |
 
 ```bash
 # Enable corepack for pnpm if not already
@@ -157,14 +157,14 @@ done
 
 These files likely already exist and need **manual merging**, not overwriting:
 
-| File | Action |
-|:--|:--|
-| `package.json` | Merge `scripts` and `devDependencies` sections |
-| `tsconfig.json` | Merge `compilerOptions` — ensure `strict: true` |
-| `turbo.json` | Merge `tasks` if Turborepo is already configured |
-| `mcp.json` | Merge `mcpServers` — add missing servers |
-| `.gitignore` | Append missing patterns |
-| `pnpm-workspace.yaml` | Verify `apps/*` and `packages/*` are listed |
+| File                  | Action                                           |
+| :-------------------- | :----------------------------------------------- |
+| `package.json`        | Merge `scripts` and `devDependencies` sections   |
+| `tsconfig.json`       | Merge `compilerOptions` — ensure `strict: true`  |
+| `turbo.json`          | Merge `tasks` if Turborepo is already configured |
+| `mcp.json`            | Merge `mcpServers` — add missing servers         |
+| `.gitignore`          | Append missing patterns                          |
+| `pnpm-workspace.yaml` | Verify `apps/*` and `packages/*` are listed      |
 
 ### Step 4: Replace placeholders and verify
 
@@ -178,13 +178,14 @@ Every `{{PLACEHOLDER}}` in this boilerplate must be replaced with a project-spec
 
 ### Required (Every Project)
 
-| Placeholder | Where Used | Example Value | Description |
-|:--|:--|:--|:--|
-| `{{PROJECT_NAME}}` | `AGENTS.md`, `package.json` | `mm-website` | npm package / project name |
-| `{{DEFAULT_BRANCH}}` | `AGENTS.md`, `guardrails.md`, `coding-standards.md` | `main` or `master` | Protected branch name |
-| `{{REPO_SHAPE_DESCRIPTION}}` | `AGENTS.md` | _See below_ | One-paragraph repo description |
+| Placeholder                  | Where Used                                          | Example Value      | Description                    |
+| :--------------------------- | :-------------------------------------------------- | :----------------- | :----------------------------- |
+| `{{PROJECT_NAME}}`           | `AGENTS.md`, `package.json`                         | `mm-website`       | npm package / project name     |
+| `{{DEFAULT_BRANCH}}`         | `AGENTS.md`, `guardrails.md`, `coding-standards.md` | `main` or `master` | Protected branch name          |
+| `{{REPO_SHAPE_DESCRIPTION}}` | `AGENTS.md`                                         | _See below_        | One-paragraph repo description |
 
 **Example `{{REPO_SHAPE_DESCRIPTION}}`:**
+
 ```
 This is a Turborepo monorepo.
 - `apps/web`: Next.js 15 marketing website.
@@ -194,39 +195,39 @@ Respect app/package boundaries and prefer existing shared abstractions over dupl
 
 ### Project Structure
 
-| Placeholder | Where Used | Example Value | Description |
-|:--|:--|:--|:--|
-| `{{MONOREPO_TOOL}}` | `project-structure.md` | `Turborepo` | Monorepo orchestrator name |
-| `{{APP_NAME}}` | `project-structure.md` | `web` | Primary app directory name |
-| `{{APP_DESCRIPTION}}` | `project-structure.md` | `Next.js 15 marketing site` | What the app does |
+| Placeholder           | Where Used             | Example Value               | Description                |
+| :-------------------- | :--------------------- | :-------------------------- | :------------------------- |
+| `{{MONOREPO_TOOL}}`   | `project-structure.md` | `Turborepo`                 | Monorepo orchestrator name |
+| `{{APP_NAME}}`        | `project-structure.md` | `web`                       | Primary app directory name |
+| `{{APP_DESCRIPTION}}` | `project-structure.md` | `Next.js 15 marketing site` | What the app does          |
 
 ### Tech Stack
 
-| Placeholder | Where Used | Example Value | Description |
-|:--|:--|:--|:--|
-| `{{FRAMEWORK}}` | `tech-stack.md` | `Next.js 15` | Primary framework |
-| `{{STYLING}}` | `tech-stack.md` | `Tailwind CSS + Shadcn/Radix` | Styling approach |
-| `{{API_LAYER}}` | `tech-stack.md` | `tRPC v11` | API layer / protocol |
-| `{{DATABASE}}` | `tech-stack.md` | `PostgreSQL + Prisma ORM` | Database + ORM |
-| `{{AUTH}}` | `tech-stack.md` | `NextAuth v5` | Authentication solution |
+| Placeholder     | Where Used      | Example Value                 | Description             |
+| :-------------- | :-------------- | :---------------------------- | :---------------------- |
+| `{{FRAMEWORK}}` | `tech-stack.md` | `Next.js 15`                  | Primary framework       |
+| `{{STYLING}}`   | `tech-stack.md` | `Tailwind CSS + Shadcn/Radix` | Styling approach        |
+| `{{API_LAYER}}` | `tech-stack.md` | `tRPC v11`                    | API layer / protocol    |
+| `{{DATABASE}}`  | `tech-stack.md` | `PostgreSQL + Prisma ORM`     | Database + ORM          |
+| `{{AUTH}}`      | `tech-stack.md` | `NextAuth v5`                 | Authentication solution |
 
 ### Tooling & Secrets
 
-| Placeholder | Where Used | Example Value | Description |
-|:--|:--|:--|:--|
-| `{{PRISMA_CWD}}` | `mcp.json` | `apps/web` | Path to Prisma schema dir |
-| `{{PAWTHY_PROJECT_ID}}` | `.pawthyrc` | `proj_abc123` | Pawthy project ID |
-| `{{PAWTHY_ENV_ID}}` | `.pawthyrc` | `env_dev_xyz` | Pawthy environment ID |
-| `{{SECRET_KEY_1}}`, `{{SECRET_KEY_2}}` | `.pawthyrc` | `DATABASE_URL`, `NEXTAUTH_SECRET` | Secret names to sync |
+| Placeholder                            | Where Used  | Example Value                     | Description               |
+| :------------------------------------- | :---------- | :-------------------------------- | :------------------------ |
+| `{{PRISMA_CWD}}`                       | `mcp.json`  | `apps/web`                        | Path to Prisma schema dir |
+| `{{PAWTHY_PROJECT_ID}}`                | `.pawthyrc` | `proj_abc123`                     | Pawthy project ID         |
+| `{{PAWTHY_ENV_ID}}`                    | `.pawthyrc` | `env_dev_xyz`                     | Pawthy environment ID     |
+| `{{SECRET_KEY_1}}`, `{{SECRET_KEY_2}}` | `.pawthyrc` | `DATABASE_URL`, `NEXTAUTH_SECRET` | Secret names to sync      |
 
 ### Remove If Not Applicable
 
-| Placeholder / Section | Remove If... |
-|:--|:--|
-| Prisma server in `mcp.json` | No database / no Prisma |
-| `.pawthyrc` | Not using Pawthy for secrets |
-| `packages/database` in `project-structure.md` | No shared database package |
-| Database workflows in `tech-stack.md` | No database |
+| Placeholder / Section                         | Remove If...                 |
+| :-------------------------------------------- | :--------------------------- |
+| Prisma server in `mcp.json`                   | No database / no Prisma      |
+| `.pawthyrc`                                   | Not using Pawthy for secrets |
+| `packages/database` in `project-structure.md` | No shared database package   |
+| Database workflows in `tech-stack.md`         | No database                  |
 
 ---
 
@@ -286,6 +287,7 @@ After copying and replacing placeholders, you'll likely need to customize furthe
 ### Frontend-Only Project (No Database)
 
 Remove or empty these:
+
 - Delete `prisma` server from `mcp.json`
 - Remove database entries from `tech-stack.md`
 - Remove `packages/database` from `project-structure.md`
@@ -313,8 +315,10 @@ Create additional rule files in `.agent/rules/` and reference them in `AGENTS.md
 
 ```markdown
 ## First Read
+
 ...
-- `.agent/rules/my-custom-rule.md`   # ← add here
+
+- `.agent/rules/my-custom-rule.md` # ← add here
 ```
 
 ---
@@ -374,11 +378,11 @@ Run through this checklist after applying the boilerplate to confirm everything 
 
 The `scripts/` directory contains **stubs** that need implementation. Copy working versions from an existing PSL repo or implement from scratch:
 
-| Script | What It Does | Reference Repos |
-|:--|:--|:--|
-| `sync-mcp.js` | Syncs `mcp.json` → Claude Desktop / VS Code / Codex / Antigravity IDE | `mm-website`, `Jasper`, `purrmission` |
-| `test-mcp.js` | Spawns each MCP server and checks for a healthy response | `mm-website`, `Jasper` |
-| `gh-pr-review-comments.js` | Fetches PR review comments via `gh api` for agent-driven code review | All 4 main repos |
+| Script                     | What It Does                                                          | Reference Repos                       |
+| :------------------------- | :-------------------------------------------------------------------- | :------------------------------------ |
+| `sync-mcp.js`              | Syncs `mcp.json` → Claude Desktop / VS Code / Codex / Antigravity IDE | `mm-website`, `Jasper`, `purrmission` |
+| `test-mcp.js`              | Spawns each MCP server and checks for a healthy response              | `mm-website`, `Jasper`                |
+| `gh-pr-review-comments.js` | Fetches PR review comments via `gh api` for agent-driven code review  | All 4 main repos                      |
 
 To copy from an existing repo:
 
@@ -402,6 +406,7 @@ Merge the content. The boilerplate `AGENTS.md` is designed to be the canonical e
 ### Q: Can I add more MCP servers to `mcp.json`?
 
 Yes. Common additions:
+
 - `postgres`: `@modelcontextprotocol/server-postgres` — direct DB access
 - `gcloud`: `@google-cloud/gcloud-mcp` — GCP integration
 - `freepik`: `mcp-remote https://api.freepik.com/mcp` — design assets

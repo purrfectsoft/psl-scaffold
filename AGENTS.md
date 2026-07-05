@@ -6,19 +6,11 @@ This file defines baseline behavior for coding agents working in this repository
 
 Start with these rule files before making changes:
 
-- `.agent/rules/guardrails.md`
-- `.agent/rules/coding-standards.md`
-- `.agent/rules/project-structure.md`
-- `.agent/rules/tech-stack.md`
-- `.agent/rules/issue-execution.md`
-
-If the task is issue-creation related, also read:
-
-- `.agent/rules/issue-creation-standards.md`
-
-If the task is code-review-feedback related, also read:
-
-- `.agent/rules/pr-code-review-address-guidelines.md`
+- `.agent/rules/README.md` (Main Entry & Navigation Index)
+- `.agent/rules/overview.md` (Tech Stack & Architecture)
+- `.agent/rules/development.md` (Coding Standards & Workflows)
+- `.agent/rules/code-review.md` (PR Delay & Comment Fetching)
+- `.agent/rules/workflow.md` (GitHub Issue Lifecycle & Onboarding)
 
 ## Non-Negotiables
 

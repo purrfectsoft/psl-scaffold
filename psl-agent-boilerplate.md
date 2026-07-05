@@ -10,50 +10,46 @@
 
 The following table shows which conventions are shared across the audited repos:
 
-| Convention | mm-website | purrfectcore-client | Jasper | purrmission (both) | garage-band |
-|:---|:---:|:---:|:---:|:---:|:---:|
-| **Turborepo Monorepo** | ✅ | ✅ | ✅ | ✅ | ❌ (single plugin) |
-| **pnpm** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **TypeScript Strict** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **AGENTS.md Entrypoint** | ✅ | ✅ (CLAUDE.md) | ✅ (overview.md) | ✅ | ❌ |
-| **`.agent/rules/` Directory** | ✅ (9 files) | ✅ (9 files) | ✅ (16 files) | ✅ (11 files) | ❌ |
-| **Husky + commitlint** | ✅ | ✅ | ✅ | ✅ | ❌ |
-| **Conventional Commits** | ✅ | ✅ | ✅ | ✅ | ❌ |
-| **`.editorconfig`** | ✅ | ✅ | ❌ | ✅ | ❌ |
-| **`.nvmrc`** | ✅ (22) | ✅ (22) | ✅ (24.9) | ✅ (24.12) | ❌ |
-| **`.pawthyrc` (Pawthy)** | ✅ | ✅ | ❌ | ✅ | ❌ |
-| **`mcp.json`** | ✅ (7 servers) | ✅ (6 servers) | ✅ (6 servers) | ✅ (4 servers) | ❌ |
-| **`project-config.json`** | ✅ | ✅ | ❌ | ❌ | ❌ |
-| **GitHub Issue Templates** | ✅ (7 types) | ✅ (2 types) | ✅ (7 types) | ✅ (2 types) | ❌ |
-| **`.github/copilot-instructions.md`** | ✅ | ❌ | ✅ | ❌ | ❌ |
-| **`scripts/sync-mcp.js`** | ✅ | ❌ | ✅ | ✅ (.cjs) | ❌ |
-| **`scripts/gh-pr-review-comments.*`** | ✅ (.js) | ✅ (.cjs) | ✅ (.js) | ✅ (.cjs) | ❌ |
-| **Prisma ORM** | ✅ | ✅ | ✅ | ✅ | ❌ |
-| **lint-staged** | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Convention                            |   mm-website   | purrfectcore-client |      Jasper      | purrmission (both) |    garage-band     |
+| :------------------------------------ | :------------: | :-----------------: | :--------------: | :----------------: | :----------------: |
+| **Turborepo Monorepo**                |       ✅       |         ✅          |        ✅        |         ✅         | ❌ (single plugin) |
+| **pnpm**                              |       ✅       |         ✅          |        ✅        |         ✅         |         ✅         |
+| **TypeScript Strict**                 |       ✅       |         ✅          |        ✅        |         ✅         |         ✅         |
+| **AGENTS.md Entrypoint**              |       ✅       |   ✅ (CLAUDE.md)    | ✅ (overview.md) |         ✅         |         ❌         |
+| **`.agent/rules/` Directory**         |  ✅ (5 files)  |    ✅ (5 files)     |  ✅ (16 files)   |   ✅ (11 files)    |         ❌         |
+| **Husky + commitlint**                |       ✅       |         ✅          |        ✅        |         ✅         |         ❌         |
+| **Conventional Commits**              |       ✅       |         ✅          |        ✅        |         ✅         |         ❌         |
+| **`.editorconfig`**                   |       ✅       |         ✅          |        ❌        |         ✅         |         ❌         |
+| **`.nvmrc`**                          |    ✅ (22)     |       ✅ (22)       |    ✅ (24.9)     |     ✅ (24.12)     |         ❌         |
+| **`.pawthyrc` (Pawthy)**              |       ✅       |         ✅          |        ❌        |         ✅         |         ❌         |
+| **`mcp.json`**                        | ✅ (7 servers) |   ✅ (6 servers)    |  ✅ (6 servers)  |   ✅ (4 servers)   |         ❌         |
+| **`project-config.json`**             |       ✅       |         ✅          |        ❌        |         ❌         |         ❌         |
+| **GitHub Issue Templates**            |  ✅ (7 types)  |    ✅ (2 types)     |   ✅ (7 types)   |    ✅ (2 types)    |         ❌         |
+| **`.github/copilot-instructions.md`** |       ✅       |         ❌          |        ✅        |         ❌         |         ❌         |
+| **`scripts/sync-mcp.js`**             |       ✅       |         ❌          |        ✅        |     ✅ (.cjs)      |         ❌         |
+| **`scripts/gh-pr-review-comments.*`** |    ✅ (.js)    |      ✅ (.cjs)      |     ✅ (.js)     |     ✅ (.cjs)      |         ❌         |
+| **Prisma ORM**                        |       ✅       |         ✅          |        ✅        |         ✅         |         ❌         |
+| **lint-staged**                       |       ✅       |         ✅          |        ✅        |         ✅         |         ❌         |
 
 ### Common Agent Rules (Present in ≥4 repos)
 
-| Rule File | Purpose |
-|:---|:---|
-| `guardrails.md` | Branch protection, zero-tolerance error handling, output safety |
-| `coding-standards.md` | Code style, safety-first principles, documentation discipline |
-| `issue-creation-standards.md` | Issue template schema, labeling, tooling |
-| `issue-execution.md` | Discovery → Type-specific analysis → Engagement |
-| `pr-code-review-address-guidelines.md` | Fetch, address, and report on PR review cycles |
-| `project-structure.md` | Monorepo map of `apps/` vs `packages/` |
-| `tech-stack.md` | Framework, language, styling, API, DB, Auth patterns |
-| `onboarding.md` / `overview.md` | Quick-start guide for agents entering the repo |
-| `security-standards.md` | Dependency audit, CVE response |
+| Rule File        | Purpose                                                                |
+| :--------------- | :--------------------------------------------------------------------- |
+| `README.md`      | Main Entry & Navigation Index                                          |
+| `overview.md`    | Tech stack, project structure, architecture details, and roadmap       |
+| `development.md` | Safety guardrails, coding standards, TypeScript rules, and workflows   |
+| `code-review.md` | PR delay rules, review comment fetching, and PR stats reporting        |
+| `workflow.md`    | Onboarding guidelines, GitHub issue execution protocols, and templates |
 
 ### Common Scripts (Present in ≥3 repos)
 
-| Script | Purpose |
-|:---|:---|
-| `sync-mcp.js` / `sync-mcp.cjs` | Sync `mcp.json` → Claude Desktop / VS Code / Codex / Antigravity configs |
-| `gh-pr-review-comments.js` / `.cjs` | Fetch PR review comments for agent-driven CR workflows |
-| `test-mcp.js` | Verify MCP server startup and connectivity |
-| `antigravity.js` / `antigravity.cjs` | Antigravity IDE integration helper |
-| `quick-start.sh` | One-command environment bootstrap |
+| Script                               | Purpose                                                                  |
+| :----------------------------------- | :----------------------------------------------------------------------- |
+| `sync-mcp.js` / `sync-mcp.cjs`       | Sync `mcp.json` → Claude Desktop / VS Code / Codex / Antigravity configs |
+| `gh-pr-review-comments.js` / `.cjs`  | Fetch PR review comments for agent-driven CR workflows                   |
+| `test-mcp.js`                        | Verify MCP server startup and connectivity                               |
+| `antigravity.js` / `antigravity.cjs` | Antigravity IDE integration helper                                       |
+| `quick-start.sh`                     | One-command environment bootstrap                                        |
 
 ---
 
@@ -63,15 +59,11 @@ The following table shows which conventions are shared across the audited repos:
 {{PROJECT_ROOT}}/
 ├── .agent/
 │   └── rules/
-│       ├── guardrails.md
-│       ├── coding-standards.md
-│       ├── issue-creation-standards.md
-│       ├── issue-execution.md
-│       ├── pr-code-review-address-guidelines.md
-│       ├── project-structure.md
-│       ├── tech-stack.md
-│       ├── onboarding.md
-│       └── security-standards.md
+│       ├── README.md
+│       ├── overview.md
+│       ├── development.md
+│       ├── code-review.md
+│       └── workflow.md
 ├── .editorconfig
 ├── .github/
 │   ├── copilot-instructions.md
@@ -124,19 +116,11 @@ This file defines baseline behavior for coding agents working in this repository
 
 Start with these rule files before making changes:
 
-- `.agent/rules/guardrails.md`
-- `.agent/rules/coding-standards.md`
-- `.agent/rules/project-structure.md`
-- `.agent/rules/tech-stack.md`
-- `.agent/rules/issue-execution.md`
-
-If the task is issue-creation related, also read:
-
-- `.agent/rules/issue-creation-standards.md`
-
-If the task is code-review-feedback related, also read:
-
-- `.agent/rules/pr-code-review-address-guidelines.md`
+- `.agent/rules/README.md` (Main Entry & Navigation Index)
+- `.agent/rules/overview.md` (Tech Stack & Architecture)
+- `.agent/rules/development.md` (Coding Standards & Workflows)
+- `.agent/rules/code-review.md` (PR Delay & Comment Fetching)
+- `.agent/rules/workflow.md` (GitHub Issue Lifecycle & Onboarding)
 
 ## Non-Negotiables
 
@@ -172,222 +156,153 @@ If the task is code-review-feedback related, also read:
 
 ---
 
-## 🛡️ `.agent/rules/guardrails.md`
+## 🤖 `.agent/rules/README.md`
 
 ```markdown
-# 🛡️ Guardrails & Footgun Prevention
+---
+trigger: always_on
+---
 
-**Warning**: Failure to follow these rules will result in rejected operations.
+# 🤖 Agent Instructions & Workspace Entry
 
-## 1. Branching Strategy (CRITICAL)
+Welcome! This directory contains the consolidated workspace guidelines for the {{PROJECT_NAME}}. Review these instructions to align with project standards.
 
-- **NEVER** commit directly to `{{DEFAULT_BRANCH}}`.
-- **ALWAYS** create a new branch for every task:
-  - `feat/...` for features.
-  - `fix/...` for bugs.
-  - `chore/...` for maintenance.
-- If you find yourself on `{{DEFAULT_BRANCH}}`, STOP and `git checkout -b <new-branch>` immediately.
+## 🧭 Navigation Index
 
-## 2. Environment Integrity
+- [Project Overview](overview.md) - Tech stack, codebase structure, architecture details, and project specs locator.
+- [Development Standards](development.md) - Guardrails, TypeScript guidelines, code styles, and common workflows.
+- [Code Review Guidelines](code-review.md) - PR delay rules, review fetching commands, and comment address guidelines.
+- [Issue Workflow](workflow.md) - Onboarding rules, GitHub issue lifecycle, templates, and execution protocols.
 
-- **Clean Slate**: Before starting, ensure working tree is clean (`git status`).
-- **Sync**: Ensure logic is based on latest `{{DEFAULT_BRANCH}}`.
-- **Bail Early**: If the environment is dirty or out of sync, stop and notify the Operator.
+## ⚡ Core Agent Directives
 
-## 3. Error Handling (ZERO TOLERANCE)
-
-- **Fail Early**: If a command fails (exit code != 0), **STOP IMMEDIATELY**.
-- **Report**: Notify the Operator or file a bug. Do not proceed with "happy path" assumptions.
-- **No Sweeping Under the Rug**:
-  - **NEVER** ignore lint, build, or test failures to "just get it done".
-  - **NEVER** suppress errors without explicit instruction.
-  - **NEVER** proceed without addressing the root cause or reporting the issue.
-
-## 4. Commit Hygiene
-
-- **Focused Commits**: Prefer small, atomic commits over massive dumps.
-- **Traceability**: Link commits to issues where possible.
-- **Message**: Use Conventional Commits (e.g., `feat: add login`).
-
-## 5. Monorepo Safety
-
-- **Boundaries**: Respect `apps/` vs `packages/` separation.
-- **Deps**: Do not edit `pnpm-lock.yaml` manually.
-
-## 6. Output Safety
-
-- **Self-Correction**: Check `git status` before verifying. If you see `dist/`, `.next/`, or `tmp/` files, DO NOT add them.
-- **Ignorance**: If temporary files appear, propose adding them to `.gitignore`.
+1. **Safety First**: Never commit directly to `{{DEFAULT_BRANCH}}`. Run `{{PACKAGE_MANAGER}} audit` before updates. Stop execution immediately on command errors.
+2. **Context Integrity**: Keep all documentation, rules, and tests updated as code changes.
+3. **No Placeholders**: Do not write stub/placeholder logic. Write complete, functional implementations.
 ```
 
 ---
 
-## 📝 `.agent/rules/coding-standards.md`
+## 📖 `.agent/rules/overview.md`
 
 ```markdown
-# 📝 Coding Standards & Agent Behavior
+---
+trigger: model_decision
+---
 
-## 1. Safety First
+# 📖 Project Overview & Architecture
 
-- **Filesystem**: Verify file paths with `find_by_name` or `list_dir` before editing.
-- **Testing**: Always implement 'QA Checklist' items manually if possible, or script them.
-- **Dependencies**:
-  - Do not add new npm packages without explicit user approval.
-  - **MUST** run `pnpm audit` before adding/upgrading dependencies to check for CVEs.
-- **Git Hygiene**:
-  - **NEVER** commit directly to `{{DEFAULT_BRANCH}}`. Always use a feature branch.
-  - **Check Branch**: Run `git status` before every `git add/commit` sequence.
-  - **Granularity**: focused commits only. Separation of concerns (Deps vs Code vs Config). No "misc" or "wip".
+This document provides a cohesive reference for the {{PROJECT_NAME}}'s technologies, project directory structure, core architectures, and development roadmap.
 
-## 2. Code Style
+## 🛠️ Technology Stack
 
-- **Components**: Functional Components, named exports.
-- **Props**: Explicit Interfaces (no `any`).
-- **State**: Use `useMemo`/`useCallback` for expensive computations.
-- **Server Actions**: Use `server-only` package for data logic.
+- **Runtime**: Node.js v{{NODE_VERSION}}+ (ES Modules / TypeScript).
+- **Package Manager**: {{PACKAGE_MANAGER}} (e.g., pnpm with Turborepo monorepo workspaces).
+- **Framework**: {{FRAMEWORK}} (e.g., Next.js 15 App Router).
+- **Styling**: {{STYLING}} (e.g., Tailwind CSS + packages/ui Shadcn/Radix).
+- **API Layer**: {{API_LAYER}} (e.g., tRPC v11 + React Query).
+- **Database**: {{DATABASE}} (e.g., PostgreSQL + Prisma ORM).
+- **Authentication**: {{AUTH}} (e.g., NextAuth v5).
+- **AI Context**: Context7 MCP (Mandatory for documentation lookup).
 
-## 3. Communication
+## 🗺️ Workspace Structure Map
+```
 
-- **Updates**: Provide concise status updates (Task Boundary).
-- **Errors**: Report errors clearly; do not hide them.
-- **Decisions**: Reference `docs/specs/**/*.md` for architectural decisions.
+{{WORKSPACE_MAP}}
+<!-- Example for Monorepo:
+{{PROJECT_ROOT}}/
+├── apps/
+│   └── {{APP_NAME}}/            # Main application
+└── packages/                    # Shared Workspace Packages
+    ├── config/                  # Shared configs
+    └── ui/                      # Shared design system components
+-->
 
-## 4. Documentation Discipline
+```
 
-- **Freshness**: Always keep docs, agent rules, READMES, and comments up to date.
-- **The 5-Minute Rule**: Before every PR, take 5 minutes to reflect on changes. Update any impacted documentation. Verify that all open threads/issues are addressed.
+## 🏗️ Architecture & Decision Documents
+
+When designing or modifying components, refer to the spec files in `docs/`:
+
+- **System Architecture**: [docs/system-architecture.md](file:///{{PROJECT_ROOT_URL}}/docs/system-architecture.md) - Details and specifications of the architecture.
+<!-- Add relevant document links here -->
+
+## 🗺️ Roadmap & Priorities
+
+- [ ] **Test Coverage**: Implement testing harness and add coverage for shared helpers.
+- [ ] **Security Audits**: Run standard security updates.
 ```
 
 ---
 
-## 🔐 `.agent/rules/security-standards.md`
+## 🛠️ `.agent/rules/development.md`
 
 ```markdown
-# Security Standards & Dependency Management
+---
+trigger: always_on
+---
 
-## Dependency Upgrades
+# 🛠️ Development Standards & Workflows
 
-- **MUST** check for known vulnerabilities before adding or upgrading dependencies.
-- **MUST** ensure vulnerability scans (e.g., `pnpm audit`) report no new vulnerabilities when modifying dependencies.
-- **MUST NOT** introduce dependencies with critical or high severity vulnerabilities.
-- **MUST** prioritize patching security vulnerabilities over feature work when alerted.
+## 🛡️ Guardrails & Safety First
 
-## CVE Response
+1. **Branching Strategy**: **NEVER** commit directly to `{{DEFAULT_BRANCH}}`. Always create feature (`feat/`), bugfix (`fix/`), or chore (`chore/`) branches.
+2. **Environment & Sync**: Run `git status` to ensure a clean slate before any commits. Propose gitignoring newly discovered temporary files instead of committing them.
+3. **Dependencies & CVEs**: Do not install packages without approval. Run `{{PACKAGE_MANAGER}} audit` before upgrades/additions to check for vulnerability alerts.
+4. **Shell Portability**: Prefer PATH-based discovery for `{{PACKAGE_MANAGER}}`. Verify active package manager and runtime versions on startup using `{{PACKAGE_MANAGER}} -v && node -v`.
+5. **Fail Early**: Stop execution immediately on any non-zero exit code. Never ignore lint, test, or build errors.
 
-- If a vulnerability is detected in a core framework (e.g., Next.js, React), upgrade immediately to the patched version.
+## 📝 Code Standards & TypeScript Guidelines
+
+- **Strict TypeScript**: Do not use `any`. Use `unknown` with type guards or explicit TypeScript types/interfaces for all variables and props.
+- **React & Styling**: Use functional components with named exports. Utilize shared UI design primitive components from `{{UI_PACKAGE_ALIAS}}` (e.g., `@workspace/ui`).
+- **State**: Optimize performance using `useMemo` and `useCallback` for complex structures or expensive computations.
+- **Server Safety**: Use `server-only` declarations for pure data logic to prevent leaks.
+- **Shared Schemas**: Define validation schemas under `{{VALIDATORS_PATH}}` (e.g., `packages/validators`) to ensure type consistency across client and server boundaries.
+
+---
+
+## 🚀 Key Workflows
+
+Run the following scripts from the root directory:
+
+### 1. Local Development & Verification
+
+- **Dev Server**: `{{PACKAGE_MANAGER}} dev`
+- **Build**: `{{PACKAGE_MANAGER}} build` (turbo-powered production compilation).
+- **Linting**: `{{PACKAGE_MANAGER}} lint` (turbo-powered static analysis checks).
+- **Format**: `{{PACKAGE_MANAGER}} format` (run Prettier format).
+- **Typecheck**: `{{PACKAGE_MANAGER}} typecheck` (run TypeScript strict compiler checks).
+
+### 2. Database Workflows (if applicable)
+
+- **Db Schema Prototyping**: `{{PACKAGE_MANAGER}} db:push` (direct schema push).
+- **Client Generation**: `{{PACKAGE_MANAGER}} db:generate` (generates db client).
 ```
 
 ---
 
-## 📋 `.agent/rules/issue-creation-standards.md`
+## 🔍 `.agent/rules/code-review.md`
 
-```markdown
-# Issue Creation Standards
+````markdown
+---
+trigger: always_on
+---
 
-When creating or modifying GitHub Issues, you MUST adhere to the project's strict lifecycle standards.
+# 🔍 Code Review & Pull Request Guardrails
 
-## 1. Templates & Structure
+## 🛡️ Pre-Merge Delay & Safety Checks
 
-Never create an unstructured issue. You must use the following schema for all "Work" issues (Features, Enhancements, Infra):
-
-### Required Sections
-
-1. **Objective / Preamble**: High-level goal.
-2. **Acceptance Criteria**: Checkbox list of requirements.
-3. **Implementation Brief**: Technical context or plan.
-4. **QA Checklist**: Manual verification steps.
-
-## 2. Title Format
-
-- **Human Readable**: Titles must be concise, human-readable sentences or phrases.
-- **No Prefixes**: Do NOT use conventional commit prefixes (e.g., `feat:`, `chore:`) in issue titles.
-- **Exceptions**: Use square bracket labels only for high-level highlighting, e.g., `[Epic]`, `[Urgent]`.
-
-## 3. Labeling
-
-You must apply exactly one `type:*` label. Applying a `priority:*` label is recommended.
-
-### Types (One Required)
-
-- `type: feature` — New capabilities
-- `type: enhancement` — Improvement to existing features
-- `type: bug` — Fixes
-- `type: infra` — DevOps/Config
-- `type: docs` — Documentation
-- `type: epic` — Tracking parents
-- `type: stub` — Ideas, Incubation, Placeholders
-
-### Priority (Optional but Recommended)
-
-- `priority: P0` — Critical/Urgent
-- `priority: P1` — High/Important
-- `priority: P2` — Medium/Normal
-- `priority: P3` — Low/Nice to have
-
-## 4. Tooling
-
-Use `gh issue create` with the `--label` and `--body` (or `--body-file`) flags to ensure compliance.
-```
+- **Mandatory PR Merge Delay**: Wait at least **10 minutes** before merging any pull request to allow reviewers and automated tools to post feedback.
+- **Pre-Merge Review Check**: Immediately prior to merge, run the comment fetcher or check review comments using the GitHub MCP server to ensure all issues are resolved.
+  `node scripts/gh-pr-review-comments.{{SCRIPT_EXTENSION}} <PR_NUMBER>` (e.g., `.js` or `.cjs`)
+  Address, push, and reply to all feedback before merging.
 
 ---
 
-## 🎯 `.agent/rules/issue-execution.md`
+## 📥 Fetching Review Comments
 
-```markdown
-# 🎯 Issue Execution Protocol
-
-When assigned to work on a GitHub Issue, you MUST follow this strict protocol.
-
-## 1. Discovery Phase
-
-**Immediately** fetch the full issue context and history:
-
-```bash
-gh issue view <ISSUE_ID> --comments
-```
-
-- If the issue cannot be found or accessed, STOP and report to the Operator.
-
-## 2. Type-Specific Analysis
-
-### 🌱 Stub (`type: stub`)
-
-- **Goal**: Graduate to a full Issue (Feature/Epic).
-- Verify if the "Context" is still current with the codebase.
-- Draft a plan to fill the missing "Acceptance Criteria" and "Tech Brief".
-- DO NOT implement code until the metadata is graduated.
-
-### 🚀 Feature / Enhancement / Bug
-
-- **Goal**: Implementation & PR.
-- Verify all "Acceptance Criteria" are clear.
-- Focus strictly on the defined scope.
-- Create a focused PR with granular, traceable commits.
-
-### 👑 Epic (`type: epic`)
-
-- **Goal**: Management & Coordination.
-- Check child issue status and ordering.
-- Identify risks, blockers, or divergence from the plan.
-- Update the "Execution Status" table.
-
-## 3. Engagement Rules
-
-- **Feedback Loops**: IF context is missing, ambiguous, or risky, initiate a feedback loop **IMMEDIATELY**. Do not make wild assumptions.
-- **Blockers**: IF a dependency is missing or an architectural decision is needed, report it with clear **Next Steps**.
-- **Output**: The ideal outcome is a **Pull Request** or a **Status Update**—never a silent failure.
-```
-
----
-
-## 📋 `.agent/rules/pr-code-review-address-guidelines.md`
-
-```markdown
-# Code Review Workflow
-
-## Fetching PR Review Comments
-
-First ensure you are on the correct branch and it is up to date.
+Always retrieve review comments using Git-ignored locations (e.g., `tmp/`) to save comment details. **NEVER** commit review comments files.
 
 ### Primary Method: GitHub MCP Server (Recommended)
 
@@ -398,130 +313,122 @@ First ensure you are on the correct branch and it is up to date.
 ### Fallback Method: CLI Scripts
 
 ```bash
-# Discover available reviews
-node scripts/gh-pr-review-comments.js <PR_NUMBER>
+# 1. Discover active reviews
+node scripts/gh-pr-review-comments.{{SCRIPT_EXTENSION}} <PR_NUMBER>
 
-# Fetch specific review
-node scripts/gh-pr-review-comments.js <PR_NUMBER> <REVIEW_ID>
+# 2. Fetch specific review comments
+node scripts/gh-pr-review-comments.{{SCRIPT_EXTENSION}} <PR_NUMBER> <REVIEW_ID>
 
-# Delta mode (unaddressed feedback only)
-node scripts/gh-pr-review-comments.js <PR_NUMBER> --delta
+# 3. Delta Mode (Fetch only unaddressed comments)
+node scripts/gh-pr-review-comments.{{SCRIPT_EXTENSION}} <PR_NUMBER> --delta --file ./tmp/new_feedback.md
 ```
+````
 
-### Important Rules
-
-- **Always use MCP tools first.** Only fallback to scripts if MCP fails.
-- **NEVER** commit review comment files to git.
-- **Auto-Proceed**: Continue fixing, committing, pushing, and replying unless clarification is needed.
-- Once addressed, post a Top Level Reply to the PR addressing all feedback.
-
-## Reporting Format
-
-### Required Sections
-
-1. **High-Level Brief**: Grouped summary of fixes.
-2. **Detailed Stats Table**: Reviewer, Comments, Status, Latest Activity (UTC).
-3. **Condensed Stats Panel**: `<details>` block with assessment summary.
-
-> Wrap all GitHub handles in backticks (e.g., `@user`) to avoid notifications.
-> Use absolute UTC timestamps, never relative times.
-```
+- Parse priority levels from comments: `![critical]`, `![high]`, `![medium]`. Do not ignore feedback without explicit justification.
+- **Auto-Proceed**: Execute fixes in focused, atomic commits, push changes, and reply to each thread.
 
 ---
 
-## 🗺️ `.agent/rules/project-structure.md`
+## 📊 Review Statistics & Reporting
 
-```markdown
-# 🗺️ Project Structure Map
+After addressing comments, post a top-level summary reply on the PR using this exact format:
 
-This is a {{MONOREPO_TOOL}} monorepo.
+### 1. High-Level Brief
 
-## 📂 Apps
+- **Topic A**: Summary of fix.
+- **Topic B**: Summary of fix.
 
-- **`apps/{{APP_NAME}}`**: {{APP_DESCRIPTION}}.
-  - `app/` or `src/app/`: App Router / Entry point.
-  - `components/`: UI Components.
-  - `lib/`: Utilities.
-  - `server/`: API Routers & Context (if applicable).
+### 2. Reviewer Stats Table
 
-## 📦 Packages (Shared)
+| Reviewer        | Comments | Status     | Latest  |
+| :-------------- | :------- | :--------- | :------ |
+| **`@username`** | 3        | ✅ 3 Fixed | 10m ago |
 
-- **`packages/ui`**: Shared Design System.
-- **`packages/config`**: Shared configurations (ESLint, TS, Tailwind).
-- **`packages/validators`**: Shared Zod schemas.
-- **`packages/database`**: Prisma Client singleton (if applicable).
+### 3. Condensed Stats Panel (Required Details Block)
 
-## 🧭 Navigation Tips
+Include a `<details>` block with this specific format:
 
-- All new features belong in `apps/` unless explicitly shared.
-- Use `@/` or `@workspace/` alias for root imports.
+```html
+<details>
+<summary>[Found and addressed a total of <Total> code review feedback from <Count> code reviews left by <ReviewerCount> reviewers between <StartTime> and <EndTime>. This Took ~<Duration> minutes for Antigravity Agent 47. Click to expand]</summary>
+
+- **Reviewers**: <ReviewerCount> (`@reviewer`)
+- **Coverage**: 100% Addressed
+- **AI-Human Collaboration**: 🤖 Agent 47 x 👤 Reviewers
+</details>
 ```
+
+_Note: Wrap all GitHub usernames in backticks (e.g., `@user`) to prevent unwanted notifications._
+
+````
 
 ---
 
-## 🛠️ `.agent/rules/tech-stack.md`
+## 🎯 `.agent/rules/workflow.md`
 
 ```markdown
-# 🛠️ Tech Stack & Workflow
+---
+trigger: always_on
+---
 
-## Core Stack
+# 🎯 GitHub Issues & Workspace Workflow
 
-- **Framework**: {{FRAMEWORK}} (e.g., Next.js 15 / Fastify / Discord.js)
-- **Language**: TypeScript (Strict Mode)
-- **Styling**: {{STYLING}} (e.g., Tailwind CSS + Shadcn/Radix)
-- **API**: {{API_LAYER}} (e.g., tRPC v11 / REST / Discord Slash Commands)
-- **Database**: {{DATABASE}} (e.g., PostgreSQL + Prisma ORM / SQLite)
-- **Auth**: {{AUTH}} (e.g., NextAuth v5 / Discord OAuth)
-- **AI Context**: Context7 MCP (Mandatory for documentation lookup)
+## 🤖 1. Onboarding Protocol
 
-## Key Workflows
+Welcome! To start work in this workspace:
 
-- **Dev Server**: `pnpm dev`
-- **Build**: `pnpm build`
-- **Lint**: `pnpm lint`
-- **Format**: `pnpm format`
-- **Type Check**: `pnpm typecheck` or `pnpm type-check`
-- **Database** (if applicable):
-  - `pnpm db:push` / `pnpm prisma:generate`
-  - `pnpm prisma:studio`
-
-## Critical Patterns
-
-> Document project-specific patterns here, e.g.:
-> - **Images**: MUST use `ImageWithFallback`.
-> - **Layout**: MUST use `Section`, `Container` components.
-> - **Fetching**: Use tRPC hooks / `useFetchQuery` / `usePostData`.
-```
+- Familiarize yourself with the project structure and tech stack in `overview.md`.
+- Read and follow the branching, coding, and safety guidelines in `development.md`.
+- Explicitly locate target files using directory search tools before editing.
 
 ---
 
-## 🤖 `.agent/rules/onboarding.md`
+## 🚀 2. Issue Execution Protocol
 
-```markdown
-# 🤖 Agent Onboarding Protocol
+### A. Discovery Phase
 
-Welcome, Agent. To become productive, digest the following:
+Immediately fetch the full context and conversation history of your assigned issue:
 
-## 1. Governance
+```bash
+gh issue view <ISSUE_ID> --comments
+````
 
-- **Guardrails**: Read `.agent/rules/guardrails.md`.
-- **Issue Standards**: Read `.agent/rules/issue-creation-standards.md`.
-- **Execution Protocol**: Read `.agent/rules/issue-execution.md`.
-- **Coding Standards**: Read `.agent/rules/coding-standards.md`.
+_Note: If the issue cannot be found, stop and notify the Operator._
 
-## 2. Intelligence
+### B. Execution Strategy by Type
 
-- **Project Structure**: Read `.agent/rules/project-structure.md`.
-- **Tech Stack**: Read `.agent/rules/tech-stack.md`.
+- 🌱 **Stub (`type: stub`)**: Draft a plan to fill in the missing "Acceptance Criteria" and "Tech Brief". **DO NOT** write code until the stub is graduated to a feature/bug.
+- 🚀 **Feature / Enhancement / Bug**: Focus strictly on the defined scope. Create a branch and a focused PR with atomic commits.
+- 👑 **Epic (`type: epic`)**: Coordinates child issues. Track ordering, identify blockers, and keep the execution status table updated.
 
-## 3. Directives
+### C. Engagement Rules
 
-- Always check `docs/specs/` for latest architectural decisions.
-- Use file-search tools to locate files in the Monorepo (do not guess).
-- Respect Strict Mode TypeScript.
+- **Feedback Loops**: If context is missing, ambiguous, or contains high risk, notify the Operator immediately.
+- **Blockers**: Report missing dependencies or architectural questions with proposed next steps.
 
-Go forth and code.
-```
+---
+
+## 📋 3. Issue Creation Standards
+
+When creating new issues, use the following standards:
+
+### A. Structured Format
+
+Every work issue (Feature, Enhancement, Infra) must contain:
+
+1. **Objective / Preamble**: High-level goal.
+2. **Acceptance Criteria**: Checkbox list of requirements.
+3. **Implementation Brief**: Technical design or proposed steps.
+4. **QA Checklist**: Manual verification steps.
+
+### B. Title & Labels
+
+- **Titles**: Use human-readable descriptions. **Do NOT use conventional commit prefixes** (e.g., `feat:`, `fix:`) in issue titles. (e.g., Use "Implement User Login" instead of "feat: add login").
+- **Labels**: Apply exactly one `type:*` label (`feature`, `enhancement`, `bug`, `infra`, `docs`, `epic`, `stub`). Adding a `priority:*` label (`priority: P0` to `priority: P3`) is recommended.
+
+Use the GitHub CLI (`gh issue create`) for compliant creation.
+
+````
 
 ---
 
@@ -542,7 +449,7 @@ insert_final_newline = true
 
 [*.md]
 trim_trailing_whitespace = false
-```
+````
 
 ### `.nvmrc`
 
@@ -611,10 +518,7 @@ npx --no -- commitlint --edit ${1}
 {
   "projectId": "{{PAWTHY_PROJECT_ID}}",
   "envId": "{{PAWTHY_ENV_ID}}",
-  "keys": [
-    "{{SECRET_KEY_1}}",
-    "{{SECRET_KEY_2}}"
-  ]
+  "keys": ["{{SECRET_KEY_1}}", "{{SECRET_KEY_2}}"]
 }
 ```
 
@@ -633,10 +537,7 @@ packages:
 ```json
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": [
-    "NODE_ENV",
-    "DATABASE_URL"
-  ],
+  "globalEnv": ["NODE_ENV", "DATABASE_URL"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -671,7 +572,12 @@ packages:
     },
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp", "--api-key", "${CONTEXT7_API_KEY}"]
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "${CONTEXT7_API_KEY}"
+      ]
     },
     "prisma": {
       "command": "npx",
@@ -682,13 +588,16 @@ packages:
     "github": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}" }
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
     }
   }
 }
 ```
 
 > **Optional servers** (add if relevant):
+>
 > - `postgres`: `modelcontextprotocol-server-postgres`
 > - `gcloud`: `@google-cloud/gcloud-mcp`
 > - `freepik`: `mcp-remote https://api.freepik.com/mcp`
@@ -795,15 +704,19 @@ This repository uses Model Context Protocol (MCP) servers for local development.
 ## Available MCP Servers
 
 ### Filesystem MCP Server
+
 - **Purpose**: Read project files and directory structure
 
 ### Context7 MCP Server
+
 - **Purpose**: Retrieve up-to-date documentation for libraries and frameworks
 
 ### Prisma MCP Server
+
 - **Purpose**: Introspect database schema
 
 ### GitHub MCP Server
+
 - **Purpose**: Search and read repository content and issues
 
 ## Configuration
